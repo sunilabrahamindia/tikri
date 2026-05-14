@@ -8,7 +8,7 @@ created: 2026-05-14
 
 # Tikri
 
-**Tikri** is a photographic and community documentation project that preserves the visual, cultural, and everyday histories of Tikri, India — led by Rafika Parvin and Moina, with Sunil Abraham as advisor.
+**Tikri** is a photographic and community documentation project that preserves the visual, cultural, and everyday histories of Tikri, India. led by Rafika Parvin and Moina, with [Sunil Abraham](https://sunilabraham.in/sunil/) as project advisor.
 
 The project documents streets, homes, neighbourhoods, markets, places of worship, landscapes, objects, memories, and local stories through photographs and open digital archives.
 
