@@ -20,29 +20,32 @@ Tikri explores collaborative and low-cost approaches to digital preservation, st
   rel="stylesheet"
   href="https://unpkg.com/leaflet/dist/leaflet.css">
 
-<script
- src="https://unpkg.com/leaflet/dist/leaflet.js"
-  defer>
-  </script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
 
-const map = L.map('map').setView(
-  [28.83353, 76.98769],
-  14
-);
+document.addEventListener('DOMContentLoaded', function () {
 
-L.tileLayer(
-  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  {
-    attribution:
-      '&copy; OpenStreetMap contributors'
-  }
-).addTo(map);
+  const map = L.map('map').setView(
+    [28.83353, 76.98769],
+    14
+  );
 
-L.marker([28.83353, 76.98769])
-  .addTo(map)
-  .bindPopup('<strong>Tikri</strong><br>Community documentation project');
+  L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+      attribution:
+        '&copy; OpenStreetMap contributors'
+    }
+  ).addTo(map);
+
+  L.marker([28.83353, 76.98769])
+    .addTo(map)
+    .bindPopup(
+      '<strong>Tikri</strong><br>Community documentation project'
+    );
+
+});
 
 </script>
 
