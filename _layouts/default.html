@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+
+  {% if page.description %}
+  <meta
+    name="description"
+    content="{{ page.description }}">
+  {% endif %}
+
+  <meta
+    name="color-scheme"
+    content="light dark">
+
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/style.css' | relative_url }}">
+
+</head>
+
+<body>
+
+<a
+  class="skip-link"
+  href="#main-content">
+  Skip to content
+</a>
+
+<header class="site-header">
+
+  <div class="header-inner">
+
+    <div class="branding">
+
+      <a
+        href="{{ '/' | relative_url }}"
+        class="site-title">
+        {{ site.title }}
+      </a>
+
+      <p class="site-tagline">
+        Photographic and community documentation project
+      </p>
+
+    </div>
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation">
+
+      <a href="{{ '/' | relative_url }}">
+        Home
+      </a>
+
+      <a href="{{ '/photos/' | relative_url }}">
+        Photos
+      </a>
+
+      <a href="{{ '/places/' | relative_url }}">
+        Places
+      </a>
+
+      <a href="{{ '/stories/' | relative_url }}">
+        Stories
+      </a>
+
+      <a href="{{ '/about/' | relative_url }}">
+        About
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<main
+  id="main-content"
+  class="content">
+
+  {{ content }}
+
+</main>
+
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <p>
+      Tikri Project
+    </p>
+
+    <p>
+      A subproject of
+      <a href="https://sunilabraham.in">
+        The Sunil Abraham Project
+      </a>
+    </p>
+
+    <p>
+      Project Leads: Rafika Pravin, Moina<br>
+      Founding Director: Sunil Abraham
+    </p>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
