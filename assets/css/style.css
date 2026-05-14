@@ -489,3 +489,157 @@ table {
   width: 100%;
   min-width: 36rem;
   border-collapse: collapse;
+}
+
+th {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--divider);
+  text-align: left;
+}
+
+td {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--divider);
+}
+
+tr:last-child td { border-bottom: 0; }
+
+/* ----------------------------------------------------------
+   CODE
+---------------------------------------------------------- */
+code {
+  font-size: 0.88em;
+  font-family: ui-monospace, 'Cascadia Code', Menlo, monospace;
+  background: var(--surface-2);
+  padding: 0.1em 0.35em;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+}
+
+pre {
+  overflow-x: auto;
+  padding: var(--sp-5);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: var(--sp-6);
+}
+
+pre code { background: none; border: none; padding: 0; }
+
+/* ----------------------------------------------------------
+   FOOTER
+---------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--divider);
+  background: var(--surface);
+}
+
+.footer-inner {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-block: var(--sp-10) var(--sp-12);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--sp-8);
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--sp-3);
+}
+
+.footer-col p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  margin-bottom: var(--sp-2);
+  max-width: 40ch;
+}
+
+.footer-col a { font-weight: 500; }
+
+/* ----------------------------------------------------------
+   READING / FOCUS MODE
+   Activated via [data-reading] on <html>
+   Designed for neurodivergent-friendly reading
+---------------------------------------------------------- */
+[data-reading] body {
+  background-color: #fdf8ee;
+}
+
+[data-reading][data-theme="dark"] body {
+  background-color: #13100d;
+}
+
+[data-reading] .content-inner {
+  max-width: 72ch;
+}
+
+[data-reading] .content {
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
+  line-height: 1.9;
+  letter-spacing: 0.012em;
+}
+
+[data-reading] .content p,
+[data-reading] .content li {
+  max-width: 66ch;
+}
+
+[data-reading] .content h1,
+[data-reading] .content h2,
+[data-reading] .content h3 {
+  letter-spacing: -0.01em;
+}
+
+[data-reading] .site-header {
+  box-shadow: 0 1px 0 var(--divider);
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------------- */
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; }
+  .header-right { position: relative; }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + var(--sp-2));
+    right: 0;
+    min-width: 200px;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    box-shadow: var(--sh-lg);
+    padding: var(--sp-2);
+    z-index: 200;
+  }
+
+  .site-nav.is-open { display: flex; }
+
+  .site-nav a {
+    border-radius: var(--r-md);
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .content h1 {
+    max-width: 100%;
+  }
+}
