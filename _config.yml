@@ -1,0 +1,17 @@
+title: Tikri
+description: Photographic and documentary archive of Tikri, India
+url: "https://tikri.sunilabraham.in"
+baseurl: ""
+
+markdown: kramdown
+permalink: pretty
+
+collections:
+  photos:
+    output: true
+
+  places:
+    output: true
+
+  stories:
+    output: true
