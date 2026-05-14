@@ -1,125 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-  <title>
-    {% if page.title %}
-      {{ page.title }} | {{ site.title }}
-    {% else %}
-      {{ site.title }}
-    {% endif %}
-  </title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   {% if page.description %}
-  <meta
-    name="description"
-    content="{{ page.description }}">
+  <meta name="description" content="{{ page.description }}">
   {% endif %}
-
-  <meta
-    name="color-scheme"
-    content="light dark">
-
-  <link
-    rel="stylesheet"
-    href="{{ '/assets/css/style.css' | relative_url }}">
-
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-
 <body>
 
-<a
-  class="skip-link"
-  href="#main-content">
-  Skip to content
-</a>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<header class="site-header">
+<div class="site-shell">
 
-  <div class="header-inner">
+  <header class="site-header">
+    <div class="header-inner">
 
-    <div class="branding">
-
-      <a
-        href="{{ '/' | relative_url }}"
-        class="site-title">
-        {{ site.title }}
+      <a href="{{ '/' | relative_url }}" class="site-brand" aria-label="{{ site.title }} — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="17" cy="21" r="2" fill="currentColor"/>
+            <circle cx="30" cy="18" r="2" fill="currentColor"/>
+            <path d="M13 32 Q20 20 28 22 Q34 24 36 30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="site-title">{{ site.title }}</span>
+          <span class="site-tagline">Photographic &amp; community archive</span>
+        </span>
       </a>
 
-      <p class="site-tagline">
-        Photographic and community documentation project
-      </p>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open navigation menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <div class="header-right">
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/photos/' | relative_url }}">Photos</a>
+          <a href="{{ '/places/' | relative_url }}">Places</a>
+          <a href="{{ '/stories/' | relative_url }}">Stories</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+        </nav>
+
+        <div class="mode-controls" aria-label="Display preferences">
+          <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch to dark mode" title="Toggle dark/light mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button type="button" class="icon-btn icon-btn--text" id="reading-toggle" aria-pressed="false" title="Toggle focus reading mode">
+            <span aria-hidden="true">Aa</span>
+            <span class="sr-only">Toggle focus reading mode</span>
+          </button>
+        </div>
+      </div>
 
     </div>
+  </header>
 
-    <nav
-      class="site-nav"
-      aria-label="Primary navigation">
+  <main id="main-content" class="content">
+    <div class="content-inner">
+      {{ content }}
+    </div>
+  </main>
 
-      <a href="{{ '/' | relative_url }}">
-        Home
-      </a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <p class="footer-name">Tikri Project</p>
+        <p>A photographic and community documentation project preserving visual and cultural histories of Tikri, India.</p>
+      </div>
+      <div class="footer-col">
+        <p>A subproject of <a href="https://sunilabraham.in" target="_blank" rel="noopener noreferrer">The Sunil Abraham Project</a></p>
+        <p>Project Leads: Rafika Pravin, Moina</p>
+        <p>Founding Director: Sunil Abraham</p>
+      </div>
+    </div>
+  </footer>
 
-      <a href="{{ '/photos/' | relative_url }}">
-        Photos
-      </a>
+</div>
 
-      <a href="{{ '/places/' | relative_url }}">
-        Places
-      </a>
+<script>
+(function () {
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+  var readingBtn = document.getElementById('reading-toggle');
+  var navToggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('site-nav');
 
-      <a href="{{ '/stories/' | relative_url }}">
-        Stories
-      </a>
+  // Theme
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  var theme = prefersDark.matches ? 'dark' : 'light';
 
-      <a href="{{ '/about/' | relative_url }}">
-        About
-      </a>
+  function applyTheme(t) {
+    theme = t;
+    root.setAttribute('data-theme', t);
+    if (themeBtn) themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  }
 
-    </nav>
+  applyTheme(theme);
+  prefersDark.addEventListener('change', function(e) { applyTheme(e.matches ? 'dark' : 'light'); });
+  if (themeBtn) themeBtn.addEventListener('click', function() { applyTheme(theme === 'dark' ? 'light' : 'dark'); });
 
-  </div>
+  // Reading / focus mode
+  var reading = false;
+  if (readingBtn) {
+    readingBtn.addEventListener('click', function () {
+      reading = !reading;
+      root.toggleAttribute('data-reading', reading);
+      readingBtn.setAttribute('aria-pressed', String(reading));
+    });
+  }
 
-</header>
-
-<main
-  id="main-content"
-  class="content">
-
-  {{ content }}
-
-</main>
-
-<footer class="site-footer">
-
-  <div class="footer-inner">
-
-    <p>
-      Tikri Project
-    </p>
-
-    <p>
-      A subproject of
-      <a href="https://sunilabraham.in">
-        The Sunil Abraham Project
-      </a>
-    </p>
-
-    <p>
-      Project Leads: Rafika Pravin, Moina<br>
-      Founding Director: Sunil Abraham
-    </p>
-
-  </div>
-
-</footer>
+  // Mobile nav
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', function () {
+      var open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!open));
+      navToggle.setAttribute('aria-label', open ? 'Open navigation menu' : 'Close navigation menu');
+      nav.classList.toggle('is-open', !open);
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
