@@ -612,12 +612,17 @@ pre code { background: none; border: none; padding: 0; }
   .nav-toggle { display: flex; }
   .header-right { position: relative; }
 
+  /* Hide mode controls from header row on mobile */
+  .mode-controls {
+    display: none;
+  }
+
   .site-nav {
     display: none;
     position: absolute;
     top: calc(100% + var(--sp-2));
     right: 0;
-    min-width: 200px;
+    min-width: 220px;
     flex-direction: column;
     align-items: stretch;
     background: var(--surface);
@@ -634,6 +639,14 @@ pre code { background: none; border: none; padding: 0; }
     border-radius: var(--r-md);
     padding: 0.8rem 1rem;
   }
+
+  /* Show mode controls inside the dropdown when nav is open */
+  .site-nav.is-open ~ .mode-controls {
+    display: flex;
+    padding: var(--sp-2) var(--sp-3) var(--sp-3);
+    border-top: 1px solid var(--divider);
+    margin-top: var(--sp-1);
+  }
 }
 
 @media (max-width: 640px) {
@@ -643,5 +656,29 @@ pre code { background: none; border: none; padding: 0; }
 
   .content h1 {
     max-width: 100%;
+  }
+
+  /* Prevent header overflow on small screens */
+  .header-inner {
+    gap: var(--sp-3);
+    padding-inline: var(--sp-3);
+  }
+
+  .site-tagline {
+    display: none;
+  }
+
+  .site-title {
+    font-size: clamp(1rem, 5vw, 1.3rem);
+  }
+
+  .brand-mark {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .brand-mark svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
