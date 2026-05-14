@@ -1,8 +1,8 @@
 title: Tikri
 description: Photographic and documentary archive of Tikri, India
 
-url: "https://sunilabrahamindia.github.io"
-baseurl: "/tikri"
+url: "https://tikri.sunilabraham.in"
+baseurl: ""
 
 markdown: kramdown
 permalink: pretty
