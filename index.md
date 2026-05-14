@@ -21,8 +21,9 @@ Tikri explores collaborative and low-cost approaches to digital preservation, st
   href="https://unpkg.com/leaflet/dist/leaflet.css">
 
 <script
-  src="https://unpkg.com/leaflet/dist/leaflet.js">
-</script>
+ src="https://unpkg.com/leaflet/dist/leaflet.js"
+  defer>
+  </script>
 
 <script>
 
