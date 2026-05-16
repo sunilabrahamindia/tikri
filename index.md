@@ -6,98 +6,68 @@ categories: [Project pages]
 created: 2026-05-14
 ---
 
+
+{% include under-construction.html %}
+
 # Tikri
 
-**Tikri** is a photographic and community documentation project that preserves the visual, cultural, and everyday histories of Tikri, India. led by Rafika Parvin and Moina, with [Sunil Abraham](https://sunilabraham.in/sunil/) as project advisor.
-
-The project documents streets, homes, neighbourhoods, markets, places of worship, landscapes, objects, memories, and local stories through photographs and open digital archives.
-
-Tikri explores collaborative and low-cost approaches to digital preservation, storytelling, and local documentation using open platforms, lightweight infrastructure, and AI-assisted workflows.
-
-<div id="map"></div>
-
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet/dist/leaflet.css">
-
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  const map = L.map('map').setView(
-    [28.83353, 76.98769],
-    14
-  );
-
-  L.tileLayer(
-    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    {
-      attribution:
-        '&copy; OpenStreetMap contributors'
-    }
-  ).addTo(map);
-
-  L.marker([28.83353, 76.98769])
-    .addTo(map)
-    .bindPopup(
-      '<strong>Tikri</strong><br>Community documentation project'
-    );
-
-});
-
-</script>
-
-## Project Team
-
-- Rafika Pravin — Project Lead
-- Moina — Project Lead
-- [Sunil Abraham](https://sunilabraham.in/sunil/) — Advisor
+**Tikri** is a demonstration of the Triple Underutilization Theory, Tikri, India. <!-- Expansion needed about the Tikri Project itself, possibly including OSM embed  –>
 
 ## Triple Under Utilisation Theory
+The Triple Underutilization Problem, is a framing that Indians and perhaps the world at large underutilize: 
+computers (including mobile phones), 
+human resources (especially the poor)
+gratis and/or free AI models and services.
 
-Tikri is an application of **Triple Under Utilisation Theory**, conceived by Sunil Abraham.<sup><em>Details to be added</em></sup>
+The solution being explored in the Theory is that greater partnership, collaboration and/or solidarity between economic and technological elites and the disadvantaged will increasingly solve for the problem articulated below. 
 
-The theory examines how existing digital infrastructure, community knowledge, and human capability often remain underused despite being widely available. The project explores how accessible technologies can support documentation, archiving, storytelling, public participation, and collaborative knowledge creation.
+The theory aims at maximizing the use of existing digital infrastructure and human capability often remains underused despite being widely available. This maximization of utility is towards human flourishing in all dimensions.
 
-The project also examines how smartphones, open platforms, and AI-assisted tools can help support local documentation efforts, including photography, oral history, mapping, and community archiving.
+*Most homes in Tikri do not possess even a single book outside text books. Using the theory above, we are demonstrating that those that don’t own books can directly leapfrog to publishing books.* 
 
-## Planned Areas
+This website and its associated repository is a reproducible digital asset that can be copied by others who wish to produce similar works with modest technological resources. A smartphone, intermittent internet access, and collaborative participation can together produce sophisticated speech artefacts that can be distributed and even sold globally.
 
-- Photographs
-- Streets and neighbourhoods
-- Markets and everyday life
-- Architecture and old houses
+The project also explores practical uses of 
+Smartphones
+Gratis digital infrastructure (Git-based publishing)
+AI-assisted workflows for organising, describing, translating, and producing a book.
+
+## Project Team
+- Rafika Pravin — Author
+- Moina Banu — Author
+- Sunil Abraham — Project Director, Concept
+- Tito Dutta — Editor
+
+## Website
+
+The project website is published using GitHub Pages:
+
+<https://tikri.sunilabraham.in>
+
+## Repository Goals
+
+- Create a model GitHub repository with folder structure, files and access control configurations
+- Make it easy for authors to upload photos, write captions, edit sections and pages of the book like [front cover, back cover, title page, half title page, attribution page, dedication page, introduction, etc]
+- Code required to assemble the above markdown files and media files into a book in .epub and .pdf formats. 
+- Decision infrastructure to decide on licensing and privacy aspects of the book. 
+- Guidance on how to upload the book and sell it on platforms such as Amazon.
+- Guidance on how to make physical copies of the book
+
+## Types of books that can be considered by those using this toolkit {#types-of-books}
+
+- Lived experience of various persons and communities
+- Knowledge and information gathering and archival
+- Cultural heritage [art, food, fashion, architecture etc]
+- Religious and philosophical ideas, stories and artefacts.
 - Oral histories and memories
 - Local stories and narratives
 - Maps and location-based documentation
+- Archival material and ephemera
 
-<style>
-#map {
-  width: 100%;
-  height: 520px;
-  margin: 2rem 0;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-}
+## Technical Approach
 
-iframe {
-  width: 100%;
-  max-width: 100%;
-  border: 0;
-}
+This section needs to be updated to focus only on the production of the book
 
-.table-wrapper {
-  overflow-x: auto;
-  margin: 2rem 0;
-}
+## License of this website and associated repository 
 
-table {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: collapse;
-}
-</style>
+Unless otherwise stated, original project material may be shared under an open license suitable for archival and educational reuse.
