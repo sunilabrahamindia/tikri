@@ -11,7 +11,7 @@ created: 2026-05-14
 
 # Tikri
 
-**Tikri** is a demonstration of the Triple Underutilization Theory, Tikri, India. <!-- Expansion needed about the Tikri Project itself, possibly including OSM embed  –>
+**Tikri** is a demonstration of the Triple Underutilization Theory, Tikri, India.
 
 ## Triple Under Utilisation Theory
 The Triple Underutilization Problem, is a framing that Indians and perhaps the world at large underutilize: 
