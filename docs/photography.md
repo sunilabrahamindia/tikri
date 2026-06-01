@@ -7,6 +7,8 @@ categories: [Documentation]
 created: 2026-06-01
 ---
 
+# Photography
+
 {% include under-construction.html %}
 
 The Tikri Project relies heavily on photographs as primary source material for documenting places, buildings, objects, documents, and everyday life in Tikri. This page provides guidance on taking photographs that are useful for documentation, archival preservation, storytelling, and book production.
