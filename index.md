@@ -33,7 +33,7 @@ Gratis digital infrastructure (Git-based publishing)
 AI-assisted workflows for organising, describing, translating, and producing a book.
 
 ## Project Team
-- Rafika Pravin — Author
+- Rafika Pravin — Author  hahahehe
 - Moina Banu — Author
 - Sunil Abraham — Project Director, Concept
 - Tito Dutta — Editor
